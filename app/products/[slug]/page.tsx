@@ -120,7 +120,7 @@ const ProductDetails = () => {
 
           <div className="w-full lg:w-[40%] space-y-8">
             <div className="space-y-3">
-              <span className="bg-[#4A69E2] text-white text-[10px] font-bold px-3 py-1 rounded-2xl uppercase">
+              <span className="bg-[#4A69E2] text-white text-[10px] font-bold px-3 py-1 rounded-xl uppercase">
                 New Release
               </span>
               <h1 className="text-xl md:text-5xl font-semibold uppercase font-heading leading-none text-[#232321] mt-4">

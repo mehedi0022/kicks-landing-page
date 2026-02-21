@@ -38,7 +38,7 @@ To get a local copy up and running, follow these steps:
 ### 1. Clone the repository
 
 ```bash
-git clone [https://github.com/mehedi0022/kicks-landing-page.git](https://github.com/mehedi0022/kicks-landing-page.git)
+git clone https://github.com/mehedi0022/kicks-landing-page.git
 ```
 
 ### 2. Install dependencies
