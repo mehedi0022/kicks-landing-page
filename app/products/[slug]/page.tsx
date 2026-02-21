@@ -50,11 +50,35 @@ const ProductDetails = () => {
   }, [slug]);
 
   if (loading) return <ProductSkeleton />;
+
   if (!product)
     return (
-      <div className="text-center py-20 font-black uppercase">
-        Product Not Found
-      </div>
+      <main className="min-h-[70vh] flex items-center justify-center bg-[#E7E7E3] px-4">
+        <div className="max-w-md w-full text-center space-y-6">
+          <div className="text-[120px] font-black text-[#232321] opacity-5 select-none">
+            404
+          </div>
+
+          <div className="space-y-2">
+            <h2 className="text-3xl font-black uppercase font-heading text-[#232321]">
+              Product Hidden?
+            </h2>
+            <p className="text-gray-500 font-sans text-sm">
+              We couldn't find the specific kicks you're looking for. It might
+              be out of stock or moved to a different collection.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 pt-4">
+            <Button
+              onClick={() => router.push("/products")}
+              className="w-full bg-[#4A69E2] hover:bg-blue-700 text-white h-14 rounded-xl uppercase font-bold text-xs shadow-lg shadow-blue-200 cursor-pointer"
+            >
+              Explore All Sneakers
+            </Button>
+          </div>
+        </div>
+      </main>
     );
 
   return (

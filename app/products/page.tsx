@@ -13,6 +13,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import NotFound from "../not-found";
+import { Button } from "@/components/ui/button";
+import { PackageOpen } from "lucide-react";
 
 const AllProductsPage = () => {
   const { products, categories, loading } = useKicks();
@@ -135,9 +138,32 @@ const AllProductsPage = () => {
               </div>
             ) : (
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-                {products.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
+                {products.length > 0 ? (
+                  products.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))
+                ) : (
+                  <section className="py-20 container mx-auto text-center px-4">
+                    <div className="flex flex-col items-center gap-4 bg-white p-12 rounded-[40px] shadow-sm">
+                      <div className="p-6 bg-[#F5F5F5] rounded-full">
+                        <PackageOpen size={48} className="text-gray-400" />
+                      </div>
+                      <h3 className="text-2xl font-bold font-heading uppercase">
+                        No Product Found
+                      </h3>
+                      <p className="text-gray-500 max-w-xs mx-auto font-sans">
+                        We couldn't find any Product.
+                      </p>
+                      <Button
+                        variant="outline"
+                        className="mt-4 rounded-xl px-8 py-6 uppercase font-bold"
+                        onClick={() => window.location.reload()}
+                      >
+                        Refresh Page
+                      </Button>
+                    </div>
+                  </section>
+                )}
               </div>
             )}
           </div>
