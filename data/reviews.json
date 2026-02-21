@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "user": "Hellen Jame",
+    "avatar": "/reviews/reviewer-1.png",
+    "rating": 3,
+    "comment": "I highly recommend shopping from kicks",
+    "productImage": "/reviews/product-1.png"
+  },
+  {
+    "id": 2,
+    "user": "Anika Mehedi",
+    "avatar": "/reviews/reviewer-2.png",
+    "rating": 5,
+    "comment": "I highly recommend shopping from kicks",
+    "productImage": "/reviews/product-2.png"
+  },
+  {
+    "id": 3,
+    "user": "Sarah Khan",
+    "avatar": "/reviews/reviewer-3.png",
+    "rating": 4,
+    "comment": "I highly recommend shopping from kicks",
+    "productImage": "/reviews/product-3.png"
+  }
+]
