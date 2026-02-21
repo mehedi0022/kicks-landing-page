@@ -48,7 +48,7 @@ export const KicksProvider = ({ children }: { children: ReactNode }) => {
         ]);
 
         setProducts(prodRes.data.slice(0, 20));
-        setCategories(catRes.data.slice(0, 4));
+        setCategories(catRes.data.slice(1, 4));
       } catch (error) {
         console.error("Data fetching failed", error);
       } finally {

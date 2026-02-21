@@ -69,22 +69,22 @@ const Categories = () => {
 
   return (
     <section className="pt-16 bg-[#232321] overflow-hidden">
-      <div className="container mx-auto mb-8">
+      <div className="container mx-auto mb-8 px-5 md:px-0">
         <div className="flex items-end justify-between">
-          <h2 className="text-4xl md:text-6xl font-semibold uppercase font-heading text-white">
+          <h2 className="text-2xl md:text-6xl font-semibold uppercase font-heading text-white">
             Categories
           </h2>
 
           <div className="flex gap-2">
             <button
               ref={prevRef}
-              className="p-3 bg-[#E7E7E3] rounded-xl hover:bg-[#4A69E2] hover:text-white transition-all cursor-pointer"
+              className="p-3 bg-[#E7E7E3] w-10 h-10 rounded-xl hover:bg-[#4A69E2] hover:text-white transition-all cursor-pointer"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               ref={nextRef}
-              className="p-3 bg-[#E7E7E3] rounded-xl hover:bg-[#4A69E2] hover:text-white transition-all cursor-pointer"
+              className="p-3 bg-[#E7E7E3] w-10 h-10 rounded-xl hover:bg-[#4A69E2] hover:text-white transition-all cursor-pointer"
             >
               <ChevronRight size={20} />
             </button>
@@ -96,7 +96,6 @@ const Categories = () => {
         <Swiper
           modules={[Navigation]}
           spaceBetween={0}
-          slidesPerView={2}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           navigation={{
             prevEl: prevRef.current,
@@ -114,6 +113,9 @@ const Categories = () => {
             1024: {
               slidesPerView: 2,
               spaceBetween: 0,
+            },
+            760: {
+              slidesPerView: 1,
             },
           }}
           className="w-full"

@@ -19,8 +19,66 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "KICKS - Premium Sneaker Store",
-  description: "Do it right with the best sneakers in the world.",
+  metadataBase: new URL("https://kicks-store.vercel.app"),
+  title: {
+    default: "KICKS - Premium Sneaker Store",
+    template: "%s | KICKS",
+  },
+  description:
+    "Experience the ultimate sneaker collection. Do it right with KICKS – your destination for authentic, premium sneakers from the world's best brands.",
+  keywords: [
+    "Sneakers",
+    "Premium Shoes",
+    "Kicks Store",
+    "Authentic Sneakers",
+    "Buy Shoes Online",
+  ],
+  authors: [{ name: "Mehedi Hassan" }],
+  creator: "Mehedi Hassan",
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://kicks-store.vercel.app",
+    siteName: "KICKS",
+    title: "KICKS - Premium Sneaker Store",
+    description:
+      "Authentic sneakers at your fingertips. Discover the latest drops and classic kicks.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KICKS Premium Sneaker Store",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "KICKS - Premium Sneaker Store",
+    description: "The best sneakers in the world, delivered to your door.",
+    images: ["/og-image.jpg"],
+    creator: "@yourtwitterhandle",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

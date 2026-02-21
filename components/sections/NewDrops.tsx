@@ -60,18 +60,17 @@ const NewDrops = () => {
   }
 
   return (
-    <section className="py-12 container mx-auto">
-      <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-4">
-        <h2 className="text-4xl md:text-6xl font-semibold uppercase font-heading  max-w-xl">
-          Don’t miss out <br />
-          new drops
+    <section className="py-12 container mx-auto px-5 md:px-0">
+      <div className="flex items-center justify-between mb-10 gap-2">
+        <h2 className="text-2xl md:text-6xl font-semibold uppercase font-heading max-w-xl">
+          Don’t miss out new drops
         </h2>
-        <Button className="bg-[#4A69E2] hover:bg-blue-700 font-medium text-sm text-white uppercase px-8 py-4 rounded-md transition-all h-auto cursor-pointer">
+        <Button className="bg-[#4A69E2] hover:bg-blue-700 font-medium text-sm text-white uppercase px-4 md:px-8 py-2 md:py-4 rounded-md transition-all h-auto cursor-pointer">
           <Link href={"/products"}>Shop New Drops</Link>
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
         {products.slice(0, 4).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

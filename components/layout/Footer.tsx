@@ -10,15 +10,15 @@ const Footer = () => {
   return (
     <footer className="w-full bg-[#E7E7E3] pt-10">
       <div className="container mx-auto px-4 lg:px-0">
-        <div className="bg-[#4A69E2] rounded-t-[32px] md:rounded-t-[48px] p-8 md:p-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-[-40px] relative z-20">
+        <div className="bg-[#4A69E2] rounded-t-[32px] md:rounded-t-[48px] p-8 md:p-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 -mb-10 relative z-20">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-medium text-white uppercase font-heading  mb-4">
+            <h2 className="text-3xl md:text-5xl font-medium text-white uppercase font-heading  mb-4">
               Join our kicksplus <br /> club & get 15% off
             </h2>
             <p className="text-blue-100 font-sans text-lg">
               Sign up for free! Join the community.
             </p>
-            <div className="flex flex-col sm:flex-row gap-2 mt-8">
+            <div className="flex flex-row gap-2 mt-8">
               <Input
                 placeholder="Email address"
                 className="bg-transparent border-white/50 text-white placeholder:text-blue-200 h-12 w-full md:w-80 rounded-lg"
@@ -29,12 +29,13 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="hidden lg:block">
+          <div className="mb-10 md:mb-0">
             <Image
               src="/footer-small-logo.png"
               alt="logo"
               width={367}
               height={112}
+              className="w-full object-contain md:object-cover"
             />
           </div>
         </div>
@@ -45,7 +46,7 @@ const Footer = () => {
               <h4 className="text-[#FFA52F] font-bold text-2xl font-heading">
                 About us
               </h4>
-              <p className="text-gray-300 text-sm leading-relaxed max-w-[280px]">
+              <p className="text-gray-300 text-sm leading-relaxed max-w-full md:max-w-70">
                 We are the biggest hyperstore in the universe. We got you all
                 cover with our exclusive collections and latest drops.
               </p>
@@ -133,7 +134,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="">
+          <div className="mt-15">
             <Image
               src="/footer-big-logo.png"
               alt="logo"
