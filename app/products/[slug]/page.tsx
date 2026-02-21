@@ -29,6 +29,7 @@ const ProductDetails = () => {
     { code: "#FFFFFF", name: "White" },
   ];
   const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {
     const fetchSingleProduct = async () => {
@@ -57,31 +58,72 @@ const ProductDetails = () => {
     );
 
   return (
-    <main className="min-h-screen bg-[#E7E7E3] pt-24 pb-20">
+    <main className="min-h-screen bg-[#E7E7E3] pt-10 pb-10">
       <div className="container mx-auto px-4 md:px-10">
         <div className="flex flex-col lg:flex-row gap-10">
-          <div className="w-full lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-4">
-            {product.images.slice(0, 4).map((img, idx) => (
-              <div
-                key={idx}
-                className={`relative aspect-square bg-[#F5F5F5] ${idx == 0 ? "rounded-tl-[48px]" : idx == 1 ? "rounded-tr-[48px]" : idx == 2 ? "rounded-bl-[48px]" : "rounded-br-[48px]"} overflow-hidden`}
-              >
+          <div className="w-full lg:w-[60%]">
+            <div className="block md:hidden space-y-4">
+              <div className="relative aspect-square bg-[#F5F5F5] rounded-[24px] overflow-hidden">
                 <Image
-                  src={img.replace(/[\[\]"]/g, "")}
-                  alt={`${product.title} angle ${idx}`}
+                  src={product.images[activeImage].replace(/[\[\]"]/g, "")}
+                  alt={product.title}
                   fill
                   className="object-cover"
                 />
               </div>
-            ))}
+              <div className="grid grid-cols-4 gap-2">
+                {product.images.slice(0, 4).map((img, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => setActiveImage(idx)}
+                    className={`relative aspect-square bg-[#F5F5F5] rounded-xl overflow-hidden cursor-pointer border-1 transition-all ${
+                      activeImage === idx
+                        ? "border-[#4A69E2]"
+                        : "border-transparent opacity-60"
+                    }`}
+                  >
+                    <Image
+                      src={img.replace(/[\[\]"]/g, "")}
+                      alt="thumbnail"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="hidden md:grid grid-cols-2 gap-4">
+              {product.images.slice(0, 4).map((img, idx) => (
+                <div
+                  key={idx}
+                  className={`relative aspect-square bg-[#F5F5F5] ${
+                    idx === 0
+                      ? "rounded-tl-[48px]"
+                      : idx === 1
+                        ? "rounded-tr-[48px]"
+                        : idx === 2
+                          ? "rounded-bl-[48px]"
+                          : "rounded-br-[48px]"
+                  } overflow-hidden group`}
+                >
+                  <Image
+                    src={img.replace(/[\[\]"]/g, "")}
+                    alt={`${product.title} angle ${idx}`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="w-full lg:w-[40%] space-y-8">
             <div className="space-y-3">
-              <span className="bg-[#4A69E2] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+              <span className="bg-[#4A69E2] text-white text-[10px] font-bold px-3 py-1 rounded-2xl uppercase">
                 New Release
               </span>
-              <h1 className="text-3xl md:text-5xl font-black uppercase font-heading leading-none text-[#232321]">
+              <h1 className="text-xl md:text-5xl font-semibold uppercase font-heading leading-none text-[#232321] mt-4">
                 {product.title}
               </h1>
               <p className="text-2xl font-bold text-[#4A69E2]">
@@ -149,18 +191,21 @@ const ProductDetails = () => {
                       },
                     });
                   }}
-                  className="flex-1 bg-[#232321] hover:bg-black text-white h-16 rounded-2xl uppercase font-black gap-3 text-lg"
+                  className="flex-1 bg-[#232321] hover:bg-black text-white h-12 rounded-xl uppercase font-medium gap-3 text-sm cursor-pointer"
                 >
-                  <ShoppingBag size={20} /> Add to Cart
+                  Add to Cart
                 </Button>
-                <Button
-                  variant="outline"
-                  className="w-14 h-14 rounded-xl border-[#232321] border-2"
-                >
-                  <Heart size={20} />
+                <Button className="w-12 h-12 rounded-xl border-[#232321] bg-[#232321] border-2">
+                  <Heart className="text-white" size={20} />
                 </Button>
               </div>
-              <Button className="w-full bg-[#4A69E2] hover:bg-blue-700 text-white h-14 rounded-xl uppercase font-bold text-xs">
+              <Button
+                onClick={() => {
+                  addToCart(product, selectedSize, selectedColor.name);
+                  router.push("/cart");
+                }}
+                className="w-full bg-[#4A69E2] hover:bg-blue-700 text-white h-12 rounded-xl uppercase font-medium text-sm cursor-pointer"
+              >
                 Buy it Now
               </Button>
             </div>

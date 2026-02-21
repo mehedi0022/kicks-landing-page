@@ -22,7 +22,7 @@ const AllProductsPage = () => {
   const colors = ["#232321", "#4A69E2", "#FFA52F", "#234D37", "#FFFFFF"];
 
   return (
-    <main className="min-h-screen bg-[#E7E7E3] pt-24 pb-20">
+    <main className="min-h-screen bg-[#E7E7E3] pt-10 pb-10">
       <div className="container mx-auto px-4 md:px-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
           <div>

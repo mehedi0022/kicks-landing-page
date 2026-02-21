@@ -27,8 +27,8 @@ const YouMayAlsoLike = ({ currentProductId }: Props) => {
 
   return (
     <section className="py-20">
-      <div className="flex items-end justify-between mb-8">
-        <h2 className="text-4xl md:text-6xl font-semibold font-heading leading-none">
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-2xl md:text-6xl font-semibold font-heading leading-none">
           You may also like
         </h2>
 
@@ -50,8 +50,8 @@ const YouMayAlsoLike = ({ currentProductId }: Props) => {
 
       <Swiper
         modules={[Navigation]}
-        spaceBetween={20}
-        slidesPerView={1.2}
+        spaceBetween={10}
+        slidesPerView={2}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,

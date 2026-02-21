@@ -23,7 +23,7 @@ const CartPage = () => {
 
   return (
     <main className="min-h-screen bg-[#E7E7E3] pt-10 pb-10">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-5 md:px-0">
         <div className="p-6 mb-8">
           <h2 className="text-3xl font-semibold font-heading text-[#232321]">
             Saving to celebrate
@@ -36,9 +36,9 @@ const CartPage = () => {
 
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="w-full lg:w-[65%] space-y-4">
-            <div className="bg-white rounded-[32px] p-8">
+            <div className="bg-white rounded-2xl md:rounded-[32px] p-4 md:p-8">
               <div className="mb-6">
-                <h2 className="text-3xl font-semibold font-heading">
+                <h2 className="text-xl md:text-3xl font-semibold font-heading">
                   Your Bag
                 </h2>
                 <p className="text-gray-500 text-sm">
@@ -51,9 +51,9 @@ const CartPage = () => {
                 {cart.map((item) => (
                   <div
                     key={`${item.id}-${item.selectedSize}`}
-                    className="flex flex-col sm:flex-row gap-6 pb-6 border-b border-gray-100 last:border-0"
+                    className="flex flex-row gap-3 md:gap-6 pb-3 md:pb-6 border-b border-gray-100 last:border-0"
                   >
-                    <div className="relative w-full sm:w-40 aspect-square bg-[#F5F5F5] rounded-2xl overflow-hidden">
+                    <div className="relative md:w-[20%] w-[40%] aspect-square bg-[#F5F5F5] rounded-2xl overflow-hidden">
                       <Image
                         src={item.images[0]}
                         alt={item.title}
@@ -62,10 +62,10 @@ const CartPage = () => {
                       />
                     </div>
 
-                    <div className="flex-1 flex flex-col justify-between">
-                      <div className="flex justify-between items-start">
+                    <div className="md:w-[80%] w-[60%] flex-1 flex flex-col">
+                      <div className="flex flex-col md:flex-row justify-between items-start">
                         <div>
-                          <h3 className="text-2xl font-semibold uppercase font-heading leading-tight">
+                          <h3 className="text-base md:text-2xl font-semibold uppercase font-heading leading-tight">
                             {item.title}
                           </h3>
                           <p className="text-gray-500 text-sm mt-1">
@@ -86,7 +86,7 @@ const CartPage = () => {
                         </p>
                       </div>
 
-                      <div className="flex items-center gap-6 mt-4">
+                      <div className="flex items-center justify-start gap-3 md:gap-6 mt-4">
                         <div className="flex items-center gap-2 text-sm font-bold">
                           <span className="text-gray-500">Size</span>
                           <span className="bg-[#ECEEF0] px-3 py-1 rounded-md">
@@ -161,7 +161,7 @@ const CartPage = () => {
                 </div>
               </div>
 
-              <Button className="w-full bg-[#232321] hover:bg-black text-white h-14 rounded-xl font-heading uppercase font-semibold mt-8">
+              <Button className="w-full bg-[#232321] hover:bg-black text-white h-14 rounded-xl font-heading uppercase font-semibold mt-8 cursor-pointer">
                 Checkout
               </Button>
               <p className="text-start text text-black mt-4 underline cursor-pointer">
