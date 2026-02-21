@@ -31,7 +31,7 @@ const Hero = () => {
       </div>
 
       <div className="full">
-        <div className="relative w-full h-full aspect-7/8 md:aspect-21/9 rounded-[40px] overflow-hidden bg-[#FAFAFA] group">
+        <div className="relative w-full h-full aspect-6.5/8 md:aspect-21/9 rounded-[40px] overflow-hidden bg-[#FAFAFA] group">
           <div className="absolute inset-0 bg-[#CC9B6D]">
             <Image
               key={currentIndex}
@@ -76,8 +76,8 @@ const Hero = () => {
             ))}
           </div>
 
-          <div className="absolute left-5 top-1/2 -translate-y-1/2 hidden lg:block z-30">
-            <div className="bg-[#232321] py-4 px-8 rounded-b-xl -rotate-90 origin-left translate-x-[-2px]">
+          <div className="absolute left-5 top-[62%] md:top-1/2 -translate-y-1/2 z-30">
+            <div className="bg-[#232321] py-4 px-4 md:px-8 rounded-b-xl -rotate-90 origin-left translate-x-[-2px]">
               <h4 className="text-[12px] font-bold tracking-[0.3em] text-white whitespace-nowrap">
                 Nike product of the year
               </h4>
